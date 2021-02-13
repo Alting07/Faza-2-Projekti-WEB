@@ -1,19 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laptop</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <div class="main">
-        <nav>
-            <?php
-                include 'Subcomponents/logo1.php';
-                include 'Subcomponents/nav-links.php';
-            ?>
-        </nav>
+<?php
+
+include 'Components/header.php'; 
+?>
         <div class="information">
             <div class="overlay"></div>
             <img src="images/lenovo.png" class="laptop" alt="">

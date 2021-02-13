@@ -11,7 +11,7 @@
             <a id="second" href="#" onclick="changeForm(1)"  >Register</a>
         </div>
         <img src="images/avatar.png" class="avatar">
-        <form>
+        <form id="mainForm"">
             <div class="login forms form-style">
                 <p>Username</p>
                 <input id="username" class="input" type="text" name="" placeholder="Enter Username">
