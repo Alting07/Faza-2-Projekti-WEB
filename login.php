@@ -17,7 +17,7 @@
                 <input id="username" class="input" type="text" name="" placeholder="Enter Username">
                 <p>Password</p>
                 <input id="password" class="input" type="password" name="" placeholder="Enter Password">
-                <input id="submit" type="submit" name="" value="Login" onclick="validate(0)" formaction="#" >
+                <input id="submit" type="submit" name="login-btn" value="Login" onclick="validate(0)" formaction="#" >
                 <a href="#">Forgot your Password?</a><br>
             </div>
             <div class="register forms hidden">
