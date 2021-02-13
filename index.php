@@ -1,5 +1,4 @@
 <?php
-
 include 'Components/header.php'; 
 ?>
         <div class="information">

@@ -1,6 +1,3 @@
-<?php
-session_start();
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,6 +20,10 @@ session_start();
                     <li><a href="about us.php" class="button1">About us</a></li>
                     <li><a href="contact us.php" class="button1">Contact us</a></li>
                     <li><a href="login.php" class="button1">Log In</a></li>
+                    
+                    <li><a href="dashboard.php" class="button1">Dashboard</a></li>
+                    
+                    
                 </ul>
             </div>
         </nav>

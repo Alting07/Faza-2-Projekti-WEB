@@ -75,7 +75,6 @@ const usernameReg = /^[a-zA-Z0-9]{3,}$/; //4 Chars a-zA-Z0-9
 const passReg =/^(?=.*\d).{4,8}$/; //Password must be between 4 and 8 digits long and include at least one numeric digit.
 function validate(form){
     let inputs = document.querySelectorAll("input");
-    let test = document.getElementsByTagName("input");
 
     let username = inputs[0].value;
     let password = inputs[1].value;
