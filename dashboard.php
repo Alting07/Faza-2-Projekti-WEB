@@ -1,11 +1,6 @@
 <?php
 require 'Components/headerwtransparentlogo.php';
-include_once 'logic/variables.php';
-if (isset($_SESSION["role"]) && $_SESSION['role'] == '1') {
-    $userList = VariablesExample::getUsers();
-} else {
-    header("Location:login.php");
-}
+
 ?>
 
 
@@ -25,17 +20,7 @@ if (isset($_SESSION["role"]) && $_SESSION['role'] == '1') {
                         </tr>
                     </thead>
                     <tbody>
-                        <?php
-                        foreach ($userList as $user) {
-                        ?>
-                            <tr>
-                                <td><?php echo $user['userName']; ?></td>
-                                <td><?php echo $user['userLastName']; ?></td>
-                                <td><?php echo $user['userid']; ?></td>
-                            </tr>
-                        <?php
-                        }
-                        ?>
+                        
                     </tbody>
                 </table>
             </div>

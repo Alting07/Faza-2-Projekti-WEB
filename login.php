@@ -11,13 +11,13 @@
             <a id="second" href="#" onclick="changeForm(1)"  >Register</a>
         </div>
         <img src="images/avatar.png" class="avatar">
-        <form id="mainForm" action="logic/verifyLogin.php" method="post" onsubmit="return validate()">
+        <form id="mainForm" action="logic/verifyLogin.php" method="post"">
             <div class="login forms form-style">
                 <p>Username</p>
                 <input id="username" class="input" type="text" name="username" placeholder="Enter Username">
                 <p>Password</p>
                 <input id="password" class="input" type="password" name="password" placeholder="Enter Password">
-                <input id="submit" type="submit" name="login-btn" value="Login">
+                <input id="submit" type="submit" name="login-btn" value="Login" formaction="index.php">
                 <a href="#">Forgot your Password?</a><br>
             </div>
             <div class="register forms hidden">

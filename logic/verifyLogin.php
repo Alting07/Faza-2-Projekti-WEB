@@ -48,13 +48,23 @@ class LoginLogic{
     }
 
     private function verifyLogin($username, $password){
-        $mapper = new UserMapper();
-        $user = $mapper->getUserByUsername($username);
-        if ($user == null) return false;
-        else if (password_verify($password, $user['password'])) {
-                return true;
+        $loggedInUser = null;
+        $users = VariablesExample::getUsers();
+
+        foreach ($users as $user) {
+            if ($user['username'] == $username && $user['password'] == $password) {
+                if ($user['role'] == 1) {
+                    $loggedInUser = new Admin($user['id'], $user['username'], $user['password'], $user['role']);
+                } else {
+                    $loggedInUser = new SimpleUser($user['id'], $user['username'], $user['password'], $user['role']);
+                    break;
+                }
+            }
         }
-        return false;
+        if ($loggedInUser != null) {
+            $loggedInUser->setSession();
+        }
+        return $loggedInUser;
     }
 }
 
