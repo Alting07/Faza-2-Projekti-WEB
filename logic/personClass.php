@@ -1,14 +1,12 @@
 <?php
 
 abstract class Person{
-    private $id;
-    private $username;
-    private $password;
-    private $age;
-    private $role;
+    protected $username;
+    protected $password;
+    protected $age;
+    protected $role;
 
-    public function __construct($id,$username, $password, $age, $role){
-        $this->id = $id;
+    function __construct($username, $password, $age, $role){
         $this->username = $username;
         $this->password = $password;
         $this->age = $age;
@@ -17,5 +15,5 @@ abstract class Person{
 
     abstract function setSession();
 
-
+    
 }
