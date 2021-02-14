@@ -18,7 +18,6 @@ class DatabasePDOConfiguration
     {
         $this->connection = new PDO("mysql:host=$this->host;dbname=$this->dbName", $this->username, $this->password);
         $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
     }
 
 }

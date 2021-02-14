@@ -5,7 +5,7 @@ class Admin extends Person
 {
     public function __construct($username, $password, $age, $role)
     {
-        parent::__construct($username, $password, $age, $role); //equivalent to super in java
+        parent::__construct($username, $password, $age, $role); 
     }
 
 

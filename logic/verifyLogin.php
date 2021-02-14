@@ -14,6 +14,9 @@ else if(isset($_POST['register-btn'])){
     $register = new RegisterLogic($_POST);
     $register->registerUser();
 }
+else{
+    header("Location:../login.php");
+}
 
 class LoginLogic{
     private $username = "";
@@ -23,10 +26,10 @@ class LoginLogic{
         $this->password=$formData['password'];
     }
     public function verify(){
-        if($this->verifyEmpty($username, $password)){
+        if($this->verifyEmpty($this->username, $this->password)){
             header("Location:../login.php");
         }
-        else if($this->verifyLogin($username, $password)){
+        else if($this->verifyLogin($this->username, $this->password)){
             header("Location:../index.php");
         }
         else{
@@ -45,19 +48,13 @@ class LoginLogic{
     }
 
     private function verifyLogin($username, $password){
-        $person = null;
-        $users = $mapper->getUserByUsername($username);
-        if ($user == null || count($user) == 0) return false;
-        else if (password_verify($password, $user['userPassword'])) {
-            if ($user['role'] == 1) {
-                $obj = new Admin($user['id'], $user['username'], $user['password'], $user['role']);
-                $obj->setSession();
-            } else {
-                $obj = new SimpleUser($user['id'], $user['username'], $user['password'], $user['role'], "");
-                $obj->setSession();
-            }
-            return true;
-        } else return false;
+        $mapper = new UserMapper();
+        $user = $mapper->getUserByUsername($username);
+        if ($user == null) return false;
+        else if (password_verify($password, $user['password'])) {
+                return true;
+        }
+        return false;
     }
 }
 
@@ -65,18 +62,19 @@ class LoginLogic{
 class RegisterLogic{
     private $username = "";
     private $password = "";
-    private $lastname = "";
+    private $userLastName = "";
     function __constructor($formData){
         $this->username=$formData['register-username'];
         $this->password=$formData['register-password'];
-        $this->email=$formData['register-lastname'];
+        $this->userLastName=$formData['register-lastname'];
     }
 
     public function registerUser(){
-        $user = new SimpleUser($this->username, $this->password, 20 ,0,$this->lastname);
+        $user = new SimpleUser($this->username, $this->password, 20 ,0,$this->userLastName);
         $mapper = new UserMapper();
         $mapper->insertUser($user);
-        header("Location:../login.php");
+        header("Location:../index.php");
+
     }
 }
 

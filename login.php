@@ -11,7 +11,7 @@
             <a id="second" href="#" onclick="changeForm(1)"  >Register</a>
         </div>
         <img src="images/avatar.png" class="avatar">
-        <form id="mainForm" action="logic/verifyLogin.php" method="post" onsubmit="return validate()" >
+        <form id="mainForm" action="logic/verifyLogin.php" method="post" onsubmit="return validate()">
             <div class="login forms form-style">
                 <p>Username</p>
                 <input id="username" class="input" type="text" name="username" placeholder="Enter Username">

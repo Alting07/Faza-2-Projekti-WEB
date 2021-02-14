@@ -13,7 +13,8 @@ abstract class Person{
         $this->role = $role;
     }
 
-    abstract function setSession();
+    abstract protected function setSession();
+    abstract protected function setCookie();
 
     
 }

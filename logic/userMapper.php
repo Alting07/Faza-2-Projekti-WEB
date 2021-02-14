@@ -59,7 +59,7 @@ class UserMapper extends DatabasePDOConfiguration
         $this->query = "insert into User (username,userlastname, password, role) values (:name,:lastname,:pass,:role)";
         $statement = $this->conn->prepare($this->query);
         $username = $user->getUsername();
-        $lastname = $user->getLastName();
+        $lastname = $user->getLastname();
         $pass = password_hash($user->getPassword(), PASSWORD_BCRYPT);
         $role = $user->getRole();
         $statement->bindParam(":name", $username);

@@ -13,7 +13,11 @@ class SimpleUser extends Person{
         $_SESSION['role'] = 0;
         $_SESSION['roleName'] = "SimpleUser";
     }
-
+    
+    public function setCookie()
+    {
+        setcookie("username", $this->getUsername(), time() + 2 * 24 * 60 * 60);
+    }
     
     public function getLastname()
     {
